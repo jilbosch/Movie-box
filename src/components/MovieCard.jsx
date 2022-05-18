@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Link } from "react-router-dom";
 import { Movieform } from "../components/MovieForm";
 
 export class MovieCard extends Component {
@@ -18,7 +19,7 @@ render() {
           <button onClick={() => this.props.editMovie(movie.id)} className="btn-edit">✏️</button>
           <button onClick={() => this.props.deleteMovie(movie.id)}
             className="btn-danger">🗑️</button>
-          <button className="star">⭐</button>
+          <Link to="/Movie"><button className="star">⭐</button></Link>
         </div>
       </div>
     );
