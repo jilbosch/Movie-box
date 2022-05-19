@@ -9,8 +9,9 @@ export class MovieList extends Component {
     super(props)
     this.state={
       viewform: false,
-      movieToEdit:{},
-      movies:[]
+      movies:[],
+      editedMovie:{},
+      isEditMode: false,
       };
   }
   componentDidMount(){this.setState({
@@ -39,15 +40,15 @@ export class MovieList extends Component {
   editMovie = (id) => {
     this.openForm();
     let editedMovie = this.state.movies.find((movie) => movie.id === id);
-    console.log(editedMovie)
     this.setState({editedMovie})
+    this.setState({isEditMode:true})
   };
 
   render() {
     return (
       <section>
         <button onClick={this.openForm}>➕</button>
-        {this.state.viewform ? <Form addMovie={this.addMovie} /> : ""}
+        {this.state.viewform ? <Form addMovie={this.addMovie}editedMovie={this.state.editedMovie}updateMovie={this.updateMovie}isEditMode={this.state.isEditMode} /> : ""}
         <div className="movieContainer">
           {this.state.movies.map((movie, key) => (
             <MovieCard key={key}movie={movie}editMovie={this.editMovie}deleteMovie={this.deleteMovie}/>
