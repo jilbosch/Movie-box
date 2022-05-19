@@ -11,7 +11,6 @@ export class MovieList extends Component {
       viewform: false,
       movies:[],
       editedMovie:{},
-      isEditMode: false,
       };
   }
   componentDidMount(){this.setState({
@@ -24,13 +23,20 @@ export class MovieList extends Component {
     let filterMovies = this.state.movies.filter((movie) => movie.id !== id);
     this.setState({ movies: filterMovies });
   };
+ updateMovie = (newMovie) =>{
+   let newMoviesState = this.state.movies;
+   let movieToEditIndex=newMoviesState. findIndex(movie => movie.id === newMovie.id);
+   newMoviesState [movieToEditIndex] = newMovie;
+   this.setState({movies:newMoviesState});
+   this.openForm()
+ }
 
   addMovie = (data) => {
     let lastIndex = this.state.movies[this.state.movies.length - 1].id;
     let newIndex = lastIndex + 1;
     let newMovie = { id: newIndex, ...data };
-
     this.setState({ movies: [...this.state.movies, newMovie] });
+    this.openForm()
   };
 
   openForm = (id) => {
