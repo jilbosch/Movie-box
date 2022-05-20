@@ -10,18 +10,23 @@ export class MovieList extends Component {
     this.state={
       viewform: false,
       movies:[],
-      editedMovie:{},
+      editedMovie:{title:"",age:"",imgUrl:"",id:""},
       };
   }
-  componentDidMount(){this.setState({
-    movies: movieServices.getAllMovies(),})
+  componentDidMount() {
+   movieServices.getAllMovies().then((res)=>{
+    this.setState({movies:res});  
+   });
   }
   deleteMovie = (id) => {
     console.log(typeof id);
     let deleteConfirmed = window.confirm("segur que vols esborrar?");
     if (!deleteConfirmed) return;
     let filterMovies = this.state.movies.filter((movie) => movie.id !== id);
-    this.setState({ movies: filterMovies });
+    movieServices.deleteMovie(id).then (res => {
+      if (res.id== id)
+      this.setState({movies:filterMovies});
+    })
   };
  updateMovie = (newMovie) =>{
    let newMoviesState = this.state.movies;
@@ -32,11 +37,11 @@ export class MovieList extends Component {
  }
 
   addMovie = (data) => {
-    let lastIndex = this.state.movies[this.state.movies.length - 1].id;
-    let newIndex = lastIndex + 1;
-    let newMovie = { id: newIndex, ...data };
-    this.setState({ movies: [...this.state.movies, newMovie] });
-    this.openForm()
+    movieServices.createMovie(data).then (res =>{
+      this.setState({movies:[...this.state.movies,res]});
+      this.openForm();
+
+    })
   };
 
   openForm = (id) => {
