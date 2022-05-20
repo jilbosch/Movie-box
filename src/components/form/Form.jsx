@@ -21,9 +21,9 @@ export class Form extends Component {
     //   age: e.target.age.value,
     //   imgUrl: e.target.imgUrl.value,
     // };
-    this.state.isEditMode?
+    !this.state.isEditMode?
     this.props.addMovie(this.state.newMovie):
-    this.props.editedMovie(this.state.isEditMode)
+    this.props.updateMovie(this.state.newMovie)
     this.resetInputsForm(e)};
 
     resetInputsForm = (e) => {
