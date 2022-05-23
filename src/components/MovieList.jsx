@@ -31,9 +31,13 @@ export class MovieList extends Component {
  updateMovie = (newMovie) =>{
    let newMoviesState = this.state.movies;
    let movieToEditIndex=newMoviesState. findIndex(movie => movie.id === newMovie.id);
-   newMoviesState [movieToEditIndex] = newMovie;
-   this.setState({movies:newMoviesState});
-   this.openForm()
+  movieServices.updateMovie (newMovie.id,newMovie).then (res => {
+    newMoviesState[movieToEditIndex] = res
+    this.setState({movies:newMoviesState});
+  
+
+
+  })
  }
 
   addMovie = (data) => {

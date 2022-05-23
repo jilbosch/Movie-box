@@ -12,7 +12,7 @@ body {
   border-color: aqua;
   border-style: solid;
   position: relative;
-  width: 20%;
+  grid-template-columns: repeat(auto-fill, 300px);
   display: flex;
   flex-direction: column;
   margin: 2.5%;
@@ -104,6 +104,7 @@ body {
   .movieText {
     display: flex;
     align-items: initial;
+    font-size: medium;
     color: #010101;
     border-color: rgb(60, 60, 123);
   }

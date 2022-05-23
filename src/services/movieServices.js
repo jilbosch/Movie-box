@@ -17,6 +17,11 @@ export const movieServices = {
         res.data);
         return movies;
     }, 
+    updateMovie(id,dataMovie){
+        const movies = Axios.put (baseUrl + "/movies/"+id,dataMovie).then((res) =>
+        res.data);
+        return movies;
+    }
     
     
 };
