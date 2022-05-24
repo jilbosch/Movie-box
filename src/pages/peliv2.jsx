@@ -1,11 +1,6 @@
-import React, { Component } from 'react'
-import { MovieList } from '../components/MovieList'
-
-export class PeliSola extends Component {
-  render() {
-    return <div className='movieInfo'>
+<div className='movieInfo'>
       <div className='textContainer'>
-        <h1>hola</h1>
+        <h1>Joker</h1>
         <h2>país</h2>
         <p>Estados Unidos Estados Unidos</p>
         <h2>Dirección</h2>
@@ -25,7 +20,7 @@ export class PeliSola extends Component {
       </div>
 
       <div className='imatgeInterior'>
-      src="prova"
+      <img src="https://series-y-peliculas.com/wp-content/uploads/2020/01/joker-2019-675x450.jpeg" alt="" />
       </div>
     </div>
     

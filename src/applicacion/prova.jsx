@@ -6,6 +6,7 @@ export default function prova() {
       <><BrowserRouter>
           <Routes>
               <Route path="/" element={<MovieList />} />
+              <Route path="/" element={<MovieInfo/>}/>
           </Routes>
       </BrowserRouter><div>prova</div></>
   )
