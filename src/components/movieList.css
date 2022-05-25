@@ -1,21 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@100;300;400;500;700;900&display=swap");
-
 body {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 40px;
-    grid-row-gap: 40px;
-    
-    
+  background-color: rgb(59, 49, 49);
+  font-family: "Roboto", sans-serif;
+  margin: 0%;
 }
+.movieContainer {
+  /*flex-wrap: wrap;*/
+  border-color: coral;
+  border-style: solid;
+  /*display:flex;*/
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20%;
+  gap: 20px 20px;
+  
+  
+  
+  
+}
+
 .movieBox {
   border-color: aqua;
   border-style: solid;
-  position: relative;
-
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
   margin: 2.5%;
   filter:drop-shadow(.2rem .2rem .5rem var(--almost_dark))
 }
@@ -24,18 +31,15 @@ body {
 }
 .movieImg {
   width: 100%;
-  display: flex;
-  flex: auto;
-  justify-content: space-between;
+  height: 100%;
+}
+.imgCont {
+  height: 90%;
   position: relative;
-  border-color: blue;
-  border-style: solid;
-  margin: auto;
-  padding-top: 7px;
 }
 .movieText {
   display: flex;
-  align-items: initial;
+  justify-content: space-between;
   color: #010101;
 }
 .movieAge {
@@ -44,16 +48,20 @@ body {
   align-items: flex-start;
   color: white;
   background-color: #010101;
-  top: 80%;
-  left: 10%;
+  top: 88%;
+  left: 5%;
 }
-.movieText {
+.TextContainer {
   display: flex;
   justify-content: space-between;
-  font-weight: 300;
+  align-items: center;
+  margin-top: 7px;
+  
 }
 .movieTitle {
   margin-left: 5%;
+  font-size:20px;
+  color: rgb(139, 140, 141);
 }
 .star {
   background-color: transparent;
@@ -70,79 +78,18 @@ body {
   border: none;
   margin-right: 5%;
 }
-@media only screen and (min-width: 450px) {
-  body {
-    width: 100%;
-    background-color: rgb(59, 49, 49);
-    font-family: "Roboto", sans-serif;
-    margin: 0%;
+
+@media (max-width:600px) {
+  .movieContainer{
+    grid-template-columns:90%;
+    justify-content: center;
   }
-  .movieContainer {
-  border-color: red;
-  border-style: solid;
-  box-sizing: border-box;
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(4, 100fr);
-  margin: 0 auto;
-  width: 100%;
-  }
-  .movieBox {
-    border-color: aqua;
-    border-style: solid;
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin: 2.5%;
-  }
-  .imgCont {
-    height: 100%;
-  }
-  .movieImg {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    border-color: blue;
-    border-style: solid;
-  }
-  .movieText {
-    display: flex;
-    align-items: initial;
-    font-size: medium;
-    color: #010101;
-    
-  }
-  .movieAge {
-    position: absolute;
-    font-weight: bold;
-    align-items: flex-start;
-    color: white;
-    background-color: #010101;
-    top: 70%;
-    left: 10%;
-  }
-  .movieText {
-    display: flex;
-    justify-content: space-between;
-    font-size: 110px;
-  }
-  .movieTitle {
-    margin-left: 5%;
-  }
-  .star {
-    background-color: transparent;
-    border: none;
-    margin-right: 5%;
-  }
-  .btn-danger {
-    background-color: transparent;
-    border: none;
-    margin-right: 5%;
-  }
-  .btn-edit {
-    background-color: transparent;
-    border: none;
-    margin-right: 5%;
-  }
+.movieAge {
+  top: 90%;
+  left: 3%;
+}
+.TextContainer{
+padding-top: 20px;  
+}
+
 }

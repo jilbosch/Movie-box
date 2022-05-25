@@ -14,7 +14,7 @@ render() {
           <img className="movieImg" src={movie.imgUrl} alt="Joker" />
           <p className="movieAge">{movie.age}</p>
         </div>
-        <div className="movieText">
+        <div className="TextContainer">
           <h4 className="movieTitle">{movie.title}</h4>
           <button onClick={() => this.props.editMovie(movie.id)} className="btn-edit">✏️</button>
           <button onClick={() => this.props.deleteMovie(movie.id)}
