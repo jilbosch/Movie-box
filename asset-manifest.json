@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Movie-box/static/css/main.9999b8e0.css",
+    "main.js": "/Movie-box/static/js/main.0bb888d9.js",
+    "static/js/787.7c42db31.chunk.js": "/Movie-box/static/js/787.7c42db31.chunk.js",
+    "index.html": "/Movie-box/index.html",
+    "main.9999b8e0.css.map": "/Movie-box/static/css/main.9999b8e0.css.map",
+    "main.0bb888d9.js.map": "/Movie-box/static/js/main.0bb888d9.js.map",
+    "787.7c42db31.chunk.js.map": "/Movie-box/static/js/787.7c42db31.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9999b8e0.css",
+    "static/js/main.0bb888d9.js"
+  ]
+}
