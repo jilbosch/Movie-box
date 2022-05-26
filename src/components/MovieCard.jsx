@@ -1,13 +1,9 @@
-import { Component } from "react";
 import { Link } from "react-router-dom";
-import { Movieform } from "../components/MovieForm";
 
-export class MovieCard extends Component {
-  constructor(props) {
-    super(props);
-  }
-render() {
-    let movie = this.props.movie;
+export const MovieCard = (props) => {
+  const movie = props.movie;
+    let to = props.to
+
     return (
       <div className="movieBox" id="Movie">
         <div className="imgCont">
@@ -15,13 +11,13 @@ render() {
           <p className="movieAge">{movie.age}</p>
         </div>
         <div className="TextContainer">
-          <h4 className="movieTitle">{movie.title}</h4>
-          <button onClick={() => this.props.editMovie(movie.id)} className="btn-edit">✏️</button>
-          <button onClick={() => this.props.deleteMovie(movie.id)}
+          <h2 className="movieTitle">{movie.title}</h2>
+          <button onClick={() => props.editMovie(movie.id)} className="btn-edit">✏️</button>
+          <button onClick={() => props.deleteMovie(movie.id)}
             className="btn-danger">🗑️</button>
           <Link to="/Movie"><button className="star">⭐</button></Link>
         </div>
       </div>
     );
   }
-}
+

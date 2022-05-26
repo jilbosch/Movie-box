@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { MovieList } from '../components/MovieList'
 
-export class PeliSola extends Component {
+export default class PeliSola extends Component {
   render() {
     return <div className='movieInfo'>
       <div className='textContainer'>

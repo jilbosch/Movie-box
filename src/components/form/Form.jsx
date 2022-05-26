@@ -5,7 +5,7 @@ export class Form extends Component {
     super(props);
     this.state= {
     newMovie: this.props.editedMovie,
-    isEditMode: this.props.isEditMode,
+    editMode: this.props.editMode,
     }
   }
 
@@ -21,7 +21,7 @@ export class Form extends Component {
     //   age: e.target.age.value,
     //   imgUrl: e.target.imgUrl.value,
     // };
-    !this.state.isEditMode?
+    !this.state.editMode?
     this.props.addMovie(this.state.newMovie):
     this.props.updateMovie(this.state.newMovie)
     this.resetInputsForm(e)};
@@ -39,7 +39,7 @@ export class Form extends Component {
         <input name="title" onChange={this.inputChange} type="text" id="title" value={this.state.newMovie.title} placeholder="Title" />
         <input name="age" onChange={this.inputChange} type="num" id="age" value={ this.state.newMovie.age} placeholder="age" />
         <input name="imgUrl" onChange={this.inputChange} type="url" id="imgUrl" value={this.state.newMovie.imgUrl} placeholder="Image" />
-        {this.state.isEditMode?
+        {this.state.editMode?
         <button type="submit">Edit</button>:
         <button type="submit">Add</button>}
       </form>

@@ -1,72 +1,71 @@
-import { Component } from "react";
+import {useEffect, useState } from "react";
 import { MovieCard } from "./MovieCard";
 import "../components/movieList.css";
 import { Form } from "../components/form/Form";
-import { MovieForm } from "./MovieForm";
 import { movieServices } from "../services/movieServices";
-export class MovieList extends Component {
-  constructor(props) {
-    super(props)
-    this.state={
-      viewform: false,
-      movies:[],
-      editedMovie:{title:"",age:"",imgUrl:"",id:""},
-      };
-  }
-  componentDidMount() {
-   movieServices.getAllMovies().then((res)=>{
-    this.setState({movies:res});  
-   });
-  }
-  deleteMovie = (id) => {
+export const MovieList =()=>{
+  const[movies,setMovies] = useState ([])
+  const[viewform,setViewform] = useState (false)
+  const[editedMovie,setEditedMovie] = useState ({title:"",age:"",imgUrl:"",id:""})
+  const[editMode,setEditMode] = useState (false)
+  
+  useEffect(()=> {
+  getAllMovies();  
+   },[]);
+   const getAllMovies = () => {
+    movieServices.getAllMovies().then((res) => {
+      setMovies(res);
+    });
+  };
+  const deleteMovie = (id) => {
     console.log(typeof id);
     let deleteConfirmed = window.confirm("segur que vols esborrar?");
     if (!deleteConfirmed) return;
-    let filterMovies = this.state.movies.filter((movie) => movie.id !== id);
+    let filterMovies =movies.filter((movie) => movie.id !== id);
     movieServices.deleteMovie(id).then (res => {
       if (res.id== id)
-      this.setState({movies:filterMovies});
+      setMovies(filterMovies);
     })
   };
- updateMovie = (newMovie) =>{
-   let newMoviesState = this.state.movies;
-   let movieToEditIndex=newMoviesState. findIndex(movie => movie.id === newMovie.id);
-  movieServices.updateMovie (newMovie.id,newMovie).then (res => {
-    newMoviesState[movieToEditIndex] = res
-    this.setState({movies:newMoviesState});
-  
+  const updateMovie = (newMovie) => {
+    movieServices.updateMovie(newMovie.id, newMovie).then((res) => {
+      let movieToEdit = movies.map((movie) =>
+        movie.id === newMovie.id ? newMovie : movie
+      );
+      setMovies(movieToEdit);
+    });
 
+    openForm();
+  };
 
-  })
- }
-
-  addMovie = (data) => {
+  const addMovie = (data) => {
     movieServices.createMovie(data).then (res =>{
-      this.setState({movies:[...this.state.movies,res]});
-      this.openForm();
+      setMovies([...movies,res]);
+      openForm();
 
     })
   };
-
-  openForm = (id) => {
-    this.setState(prevState=>({viewform:!prevState.viewform}));
+  const openForm = () => {
+    if (viewform) setViewform(false);
+    else setViewform(true);
+    setEditMode(false);
   };
 
-  editMovie = (id) => {
-    this.openForm();
-    let editedMovie = this.state.movies.find((movie) => movie.id === id);
-    this.setState({editedMovie})
-    this.setState({isEditMode:true})
+  const editMovie = (id) => {
+    openForm();
+    let editedMovie =movies.find((movie) => movie.id === id);
+    setEditedMovie(editedMovie)
+    setEditMode(true)
   };
 
-  render() {
+   {
     return (
       <section>
-        <button onClick={this.openForm}>➕</button>
-        {this.state.viewform ? <Form addMovie={this.addMovie}editedMovie={this.state.editedMovie}updateMovie={this.updateMovie}isEditMode={this.state.isEditMode} /> : ""}
+        <button onClick={openForm}>➕</button>
+        {viewform ? <Form addMovie={addMovie}editedMovie={editedMovie}updateMovie={updateMovie}editMode={editMode} /> : ""}
         <div className="movieContainer">
-          {this.state.movies.map((movie, key) => (
-            <MovieCard key={key}movie={movie}editMovie={this.editMovie}deleteMovie={this.deleteMovie}/>
+          {movies.map((movie, key) => (
+            <MovieCard key={key}movie={movie}editMovie={editMovie}deleteMovie={deleteMovie}/>
           ))}
         </div>
       </section>
