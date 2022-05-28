@@ -14,7 +14,7 @@
 A list of technologies used within the project:
 * [Java Script](https://example.com): Version 1.5 
 * [React](https://example.com): Version 16.13.1
-* [mockapi](https://example.com): Version 1234
+* [mockapi](https://example.com): Version 1.0.0
 ## Installation
 ***
 A little intro about the installation. 
