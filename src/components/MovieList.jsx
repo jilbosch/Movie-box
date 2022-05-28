@@ -3,18 +3,25 @@ import { MovieCard } from "./MovieCard";
 import "../components/movieList.css";
 import { Form } from "../components/form/Form";
 import { movieServices } from "../services/movieServices";
+import Loading from "./Loading.jsx";
+
 export const MovieList =()=>{
   const[movies,setMovies] = useState ([])
   const[viewform,setViewform] = useState (false)
   const[editedMovie,setEditedMovie] = useState ({title:"",age:"",imgUrl:"",id:""})
   const[editMode,setEditMode] = useState (false)
-  
+  const[isloading, setIsLoading] = useState (false)
+
   useEffect(()=> {
   getAllMovies();  
    },[]);
+
    const getAllMovies = () => {
+     setIsLoading(true)
+    
     movieServices.getAllMovies().then((res) => {
       setMovies(res);
+      setIsLoading(false)
     });
   };
   const deleteMovie = (id) => {
@@ -50,7 +57,7 @@ export const MovieList =()=>{
     else setViewform(true);
     setEditMode(false);
   };
-
+ 
   const editMovie = (id) => {
     openForm();
     let editedMovie =movies.find((movie) => movie.id === id);
@@ -63,11 +70,13 @@ export const MovieList =()=>{
       <section>
         <button onClick={openForm}>➕</button>
         {viewform ? <Form addMovie={addMovie}editedMovie={editedMovie}updateMovie={updateMovie}editMode={editMode} /> : ""}
+        {isloading ? (<Loading/>):(
         <div className="movieContainer">
+
           {movies.map((movie, key) => (
             <MovieCard key={key}movie={movie}editMovie={editMovie}deleteMovie={deleteMovie}/>
           ))}
-        </div>
+        </div>)}
       </section>
     );
   }
