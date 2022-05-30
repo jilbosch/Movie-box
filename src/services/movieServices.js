@@ -21,6 +21,12 @@ export const movieServices = {
         const movies = Axios.put (baseUrl + "/movies/"+id,dataMovie).then((res) =>
         res.data);
         return movies;
+    },
+
+    getMovieById (id) {
+        const movies = Axios.get(baseUrl + "/movies/"+id).then((res) =>
+        res.data);
+        return movies;
     }
     
     

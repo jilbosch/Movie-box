@@ -1,12 +1,32 @@
-import React, { Component } from 'react'
-import { MovieList } from '../components/MovieList'
+import React, { Component, useEffect } from 'react'
+import { Link, useParams} from 'react-router-dom'
+import { Button } from '@mui/material';
+import { movieServices } from '../services/movieServices';
+import { useState } from 'react';
+export default function PeliSola() {
+// const movie = props.peli;
+//   let to = props.to;
+const [movie, setMovie]= useState ({});
+const {id} = useParams ();
 
-export default class PeliSola extends Component {
-  render() {
-    return <div className='movieInfo'>
+useEffect(()=>{
+  movieId(id);
+},[])
+
+const movieId = (id) => {
+  movieServices.getMovieById(id).then (res=>{
+    setMovie(res)
+  }
+  )}
+    return(
+    <div>
+    <Link to="/"><Button>atras</Button></Link>
+    
+    <div className='movieInfo'>
       <div className='textContainer'>
-        <h1>hola</h1>
-        <h2>país</h2>
+        <h1>{movie.title}</h1>
+        <h2>{movie.age}</h2>
+        <img></img>
         <p>Estados Unidos Estados Unidos</p>
         <h2>Dirección</h2>
         <p>Todd Phillips</p>
@@ -24,10 +44,9 @@ export default class PeliSola extends Component {
     <p>Arthur Fleck (Phoenix) vive en Gotham con su madre, y su única motivación en la vida es hacer reír a la gente. Actúa haciendo de payaso en pequeños trabajos, pero tiene problemas mentales que hacen que la gente le vea como un bicho raro. Su gran sueño es actuar como cómico delante del público, pero una serie de trágicos acontecimientos le hará ir incrementando su ira contra una sociedad que le ignora.</p>
       </div>
 
-      <div className='imatgeInterior'>
+      
       src="prova"
       </div>
     </div>
-    
-  }
-}
+  
+  )}

@@ -7,7 +7,7 @@ export const MovieCard = (props) => {
     return (
       <div className="movieBox" id="Movie">
         <div className="imgCont">
-          <img className="movieImg" src={movie.imgUrl} alt="Joker" />
+        <Link to={`/movie/${movie.id}`}><img className="movieImg" src={movie.imgUrl} alt="Joker" /></Link>
           <p className="movieAge">{movie.age}</p>
         </div>
         <div className="TextContainer">
@@ -15,7 +15,7 @@ export const MovieCard = (props) => {
           <button onClick={() => props.editMovie(movie.id)} className="btn-edit">✏️</button>
           <button onClick={() => props.deleteMovie(movie.id)}
             className="btn-danger">🗑️</button>
-          <Link to="/Movie"><button className="star">⭐</button></Link>
+          <button className="star">⭐</button>
         </div>
       </div>
     );
