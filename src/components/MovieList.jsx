@@ -25,7 +25,6 @@ export const MovieList =()=>{
     });
   };
   const deleteMovie = (id) => {
-    console.log(typeof id);
     let deleteConfirmed = window.confirm("segur que vols esborrar?");
     if (!deleteConfirmed) return;
     let filterMovies =movies.filter((movie) => movie.id !== id);
