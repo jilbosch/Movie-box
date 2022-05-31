@@ -1,17 +1,21 @@
-import React, { Component, useEffect } from 'react'
+import React from 'react'
 import { Link, useParams} from 'react-router-dom'
 import { Button } from '@mui/material';
 import { movieServices } from '../services/movieServices';
-import { useState } from 'react';
-export default function PeliSola() {
-// const movie = props.peli;
+import { useState,useEffect } from 'react';
+import NavBar from '../components/form/NavBar';
+
+
+
+export default function PeliSola (){
+
 //   let to = props.to;
 const [movie, setMovie]= useState ({});
 const {id} = useParams ();
 
 useEffect(()=>{
   movieId(id);
-},[])
+},[id])
 
 const movieId = (id) => {
   movieServices.getMovieById(id).then (res=>{
@@ -20,6 +24,8 @@ const movieId = (id) => {
   )}
     return(
     <div>
+    
+    <NavBar>Hola</NavBar>
     <Link to="/"><Button>atras</Button></Link>
     
     <div className='movieInfo'>
@@ -27,7 +33,9 @@ const movieId = (id) => {
         <h1>{movie.title}</h1>
         <h2>{movie.age}</h2>
         <img src={movie.imgUrl}/>
+        <h1>{movie.sinopsis}</h1>
        </div> 
     </div>
     </div>
-  )}
+  )
+}
