@@ -1,23 +1,36 @@
 import React from 'react'
+import "../form/navBar.css"
 
 export default function NavBar() {
+
+// function myFunction() {
+//   var Y = document.getElementById("myNavbar");
+//   if (Y.className === "navbar-logo") {
+//     Y.className += " responsive";
+//   } else {
+//     Y.className = "navbar-logo";
+//   }
+// }
+
+
   return (
-    <div className="navbar navbar-expand-lg navbar-light bg-light">
-    <div className="container-fluid">
-    <a className="navbar-brand"href="#">TvMovies</a>
-    <button className="navbar-toggler"type="button"data-bs-toggle="collapse"
-    data-bs-target="#navbarNav"aria-controls="navbarNav"aria-exp/>
-     <span className="navbar-toggler-icon">×</span>
     
-    <div className="collapse navbar-collapse" id="navbarNav">
-    <li className="navbar-nav"/>
-    <li className="nav-item">
-    <div>
-    <CreateForm/>
+    <div className="navbar-container" id="myNavbar">
+    <div className='logo-container'>
+    <a className="navbar-logo" href="#">
+        <img id="logo"src="https://i.ibb.co/sWnpGR4/logo-peli.png"/></a>
     </div>
-    </li>
+    <ul className="nav st-menu">
+    <div className='navbar-btns'>
+    <a href="#home"className="active">Home</a>
+    <a href="#news">News</a>
+    <a href="#About">About</a>
+    <a href='javascipt:void(0);'className="icon"/*onclick={myFunction()}*/>
+
+        <i class= "fa fa-bars"></i>
+        </a>
     </div>
-    </div>
+    </ul>
     </div>
   )
 }

@@ -1,0 +1,60 @@
+.navBar-container{
+display: flex;
+background-color: rgb(45, 13, 13),solid;
+}
+.logo-container {
+width: 30%;
+}
+.navbar-btns a {
+float: left;
+display:flex;
+color: #b4b1b1;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+.navbar-btns a:hover {
+background-color: rgb(249, 245, 245);
+color: black;
+}
+.navbar-logo{
+display:flex;
+vertical-align: middle;
+width: 200px;
+}
+.navbar-logo img{
+display: flex;
+width: 100%;
+height: auto;
+}
+.navbar a.active {
+background-color: #04AA6D;
+color: white;
+}
+  
+.navbar .icon {
+display: none;
+}
+  
+@media screen and (max-width: 600px) {
+.navbar a:not(:first-child) {display: none;}
+.navbar a.icon {
+float: right;
+display: block;
+}
+}
+  
+@media screen and (max-width: 600px) {
+.navbar.responsive {position: relative;}
+.navbar.responsive .icon {
+position: absolute;
+right: 0;
+top: 0;
+}
+.navbar.responsive a {
+float: none;
+display: block;
+text-align: left;
+ }
+  }

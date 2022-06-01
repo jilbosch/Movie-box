@@ -6,7 +6,6 @@ import { useState,useEffect } from 'react';
 import NavBar from '../components/form/NavBar';
 
 
-
 export default function PeliSola (){
 
 //   let to = props.to;
@@ -25,17 +24,18 @@ const movieId = (id) => {
     return(
     <div>
     
-    <NavBar>Hola</NavBar>
-    <Link to="/"><Button>atras</Button></Link>
-    
-    <div className='movieInfo'>
-      <div className='textContainer'>
-        <h1>{movie.title}</h1>
-        <h2>{movie.age}</h2>
-        <img src={movie.imgUrl}/>
-        <h1>{movie.sinopsis}</h1>
-       </div> 
-    </div>
+      <NavBar></NavBar>
+      <Link to="/"><Button>atras</Button></Link>
+        <section className='pageContainer'>
+          <div className='movieInfo'>
+            <div className='textContainer'>
+              <h1>{movie.title}</h1>
+              <h2>{movie.age}</h2>
+              <img src={movie.imgUrl}/>
+              <h1>{movie.sinopsis}</h1>
+            </div> 
+          </div>
+        </section>
     </div>
   )
 }
