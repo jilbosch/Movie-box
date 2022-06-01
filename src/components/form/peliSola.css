@@ -1,0 +1,14 @@
+.pageContainer {
+display:flex;
+align-items: center;
+justify-content:center;
+min-height: 800px;
+}
+    
+.textContainer {
+height: 215px;
+width: 876px;
+box-shadow:0 5px 20px rgba(0,0,0,0.5);
+transition: 0.2s ease-in-out;
+border-radius:8px;
+}

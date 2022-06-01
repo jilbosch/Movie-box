@@ -1,3 +1,4 @@
+@import url(./utils/loading.css);
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 body {
   background-color: rgb(59, 49, 49);
@@ -5,30 +6,23 @@ body {
   margin: 0%;
 }
 .movieContainer {
-  /*flex-wrap: wrap;*/
+  /* flex-wrap: wrap;
   border-color: coral;
   border-style: solid;
-  /*display:flex;*/
+  display:flex; */
   display: grid;
   grid-template-columns: 23% 23% 23% 23%;
-  gap: 20px 20px;
-  
-  
-  
-  
+  gap: 20px 20px; 
 }
 
 .movieBox {
-  border-color: aqua;
-  border-style: solid;
+  /* border-color: aqua;
+  border-style: solid; */
   display: flex;
   flex-direction:column;
   margin: 2.5%;
-  filter:drop-shadow(.2rem .2rem .5rem var(--almost_dark))
 }
-.movieBox:hover{
-  filter:drop-shadow(.0rem .0rem .2rem var(--green_blue));
-}
+
 .movieImg {
   width: 100%;
   height: 100%;
