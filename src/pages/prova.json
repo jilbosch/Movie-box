@@ -2,6 +2,7 @@
     { 
        "title": "JOKER",
        "imgUrl": "https://www.cinerama.es/wp-content/uploads/2019/10/cine-049186.jpg",
+       "img2":"https://www.lavanguardia.com/peliculas-series/images/movie/backdrop/2019/10/w1280/n6bUvigpRFqSwmPp1m2YADdbRBc.jpg",
        "age":"2019",
        "sinopsis": "La pasión de Arthur Fleck, un hombre ignorado por la sociedad, es hacer reír a la gente. Sin embargo, una serie de trágicos sucesos harán que su visión del mundo se distorsione considerablemente convirtiéndolo en un brillante criminal.",
        "id": "1"
@@ -9,6 +10,7 @@
    {
        "title": "MOULIN ROUGE",
        "imgUrl": "http://e00-marca.uecdn.es/assets/multimedia/imagenes/2017/06/20/14979770502857.jpg",
+       "img2":"https://mycineclubblog.files.wordpress.com/2017/04/moulin-rouge.jpg",
        "age": "2001",
        "sinopsis": "Ambientada en el París bohemio de 1900. Satine, la estrella más rutilante del Moulin Rouge, encandila a toda la ciudad con sus bailes llenos de sensualidad y su enorme belleza. Atrapada entre el amor de dos hombres, un joven escritor y un duque, lucha por hacer realidad su sueño de convertirse en actriz. Pero, en un mundo en el que todo vale, excepto enamorarse, nada es fácil.",
        "id": "2"
@@ -16,6 +18,7 @@
    {
        "title": "AMELIE",
        "imgUrl": "https://es.web.img2.acsta.net/pictures/21/06/18/12/28/5014869.jpg",
+       "img2":"https://cloudfront-us-east-1.images.arcpublishing.com/copesa/PJEJIRK4ZFG7FFCZRKABLK4XWU.jpg",
        "age": "2000",
        "sinopsis": "Amélie Poulain es una joven alegre, de gran imaginación y con una luz especial que le acompaña allá donde va. Criada por unos padres excéntricos que, a los seis años, le diagnosticaron erroneamente un problema cardiaco, su contacto con el mundo exterior se ha visto limitado desde pequeño. Ante esto, Amélie desarrolla una gran imaginación. Después de que su madre muriera, y de que las tendencias antisociales de su padre se agudizaran, la joven, al cumplir los 22 años, decide independizarse. El día que muere Lady Di descubre tras una baldosa, escondida, una caja con jueguetes y fotografías en su interior. Ante este descubrimiento, se propone encontrar a su dueño y devolvérsela. Si se emociona al verla, entonces se convertirá en la vengadora del bien, ayudando a la gente a encontrar la felicidad sin que estos se enteren. La búsqueda de la felicidad ajena le llevará hasta Nino Quincampoix (Mathieu Kassovitz, 'Munich') un misterioso príncipe azul",
        "id": "3"
@@ -23,6 +26,7 @@
    {
        "title": "COCO",
        "imgUrl": "https://imjoying.com/file/freeEvent/abac08cf-e3c4-45a8-bb2d-33dcef701e9f",
+       "img2":"https://i.blogs.es/0fabda/coco/1366_2000.jpg",
        "age": "2017",
        "sinopsis": "La trama gira en torno a Miguel, un chico de doce años que es transportado accidentalmente al mundo de los muertos, donde busca ayuda para encontrar a su tatarabuelo músico fallecido y así poder volver con su familia de entre los vivos y que esta quite la prohibición que impone a sus miembros sobre tocar música.",
        "id": "4"
@@ -30,6 +34,7 @@
    {
        "title": "ENCANTO",
        "imgUrl": "https://www.visitelche.com/wp-content/uploads/2022/04/Cinema-Infantil-ENCANTO-Cines-Odeon-Elx-Elche.jpg",
+       "img2":"https://eltrebol.gov.ar/wp-content/uploads/2022/01/636696983_218552607_1024x576.jpg",
        "age": "2021",
        "sinopsis": "Cuenta la historia de una familia extraordinaria, los Madrigal, que viven escondidos en las montañas de Colombia, en una casa mágica situada en un enclave maravilloso llamado Encanto. La magia de Encanto ha dotado a todos los niños de la familia un don único, desde la súper fuerza hasta el poder de curar... Pero se olvidó de un miembro de la familia: Mirabel. Cuando ésta descubre que la magia que rodea Encanto está en peligro, decide que ella, la única Madrigal normal, podría ser la última esperanza de su extraordinaria familia.",
        "id": "5"
@@ -37,9 +42,19 @@
    {
        "title": "60 SEGUNDOS",
        "imgUrl": "https://c8.alamy.com/compes/k36brd/ido-en-60-segundos-fecha-2000-k36brd.jpg",
+       "img2":"https://deveserisso.com.br/blog/wp-content/uploads/2020/06/60-segundos.jpg",
        "age": "2000",
-       "sinopsis": "sinopsis 7",
+       "sinopsis": "Hace ya tiempo que Randall ha dejado atrás su pasado delictivo. Pero cuando se entera de que su hermano está en peligro, para salvarlo se ve obligado a hacer lo que mejor sabe hacer: robar coches: 50 coches y un contrato. Fanático del automovilismo, Memphis es una leyenda en el negocio de robo de coches. No se le resiste ninguna cerradura, ninguna alarma.",
        "id": "6"
-   }
+   },
    
+   {
+        "title": "NADIE",
+        "imgUrl": "https://es.web.img2.acsta.net/pictures/20/12/15/11/11/4656694.jpg",
+        "img2":"https://filmfilicos.com/wp-content/uploads/2021/08/nodody-banner-1.jpg",
+        "age": "2021",
+        "sinopsis": "Hutch Mansell (Bob Odenkirk) es un hombre de familia corriente. Una noche unos ladrones entran a su casa y él renuncia a defenderse y defender a su familia con el fin de evitar complicaciones. Esto decepciona a su hijo Blake (Gage Munroe) y a su mujer Becca (Connie Nielsen) que empiezan a distanciarse de él. El incidente le reconcome por dentro y hace que salga a la luz su lado más oscuro. ",
+        "id": "6"
+
+   }
 ]

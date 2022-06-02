@@ -1,6 +1,10 @@
-.navBar-container{
+.navbar-container{
 display: flex;
-background-color: rgb(45, 13, 13),solid;
+ align-items:center;
+ justify-content: space-between;
+ max-width: 1600px;
+ margin:0 auto;
+
 }
 .logo-container {
 width: 30%;

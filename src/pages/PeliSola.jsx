@@ -28,12 +28,14 @@ const movieId = (id) => {
       <Link to="/"><Button>atras</Button></Link>
         <section className='pageContainer'>
           <div className='movieInfo'>
-            <div className='textContainer'>
-              <h1>{movie.title}</h1>
-              <h2>{movie.age}</h2>
-              <img src={movie.imgUrl}/>
-              <h1>{movie.sinopsis}</h1>
-            </div> 
+              <div className='imageContainer'>
+                  <img src={movie.imgUrl}/>
+              </div> 
+                <div className='textContainer'>
+                  <h1>{movie.title}</h1>
+                  <h2>{movie.age}</h2>
+                  <h1>{movie.sinopsis}</h1>
+                </div> 
           </div>
         </section>
     </div>

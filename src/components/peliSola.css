@@ -1,0 +1,21 @@
+.pageContainer{
+display:flex;
+
+}
+.movieInfo{
+  display:flex;
+  justify-content: space-evenly;
+}
+.textContainer{
+  color: rgb(38, 38, 38);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  width: 45%;
+}
+
+.imageContainer{
+ width: 45%;
+}

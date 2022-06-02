@@ -12,10 +12,12 @@ export const MovieCard = (props) => {
         </div>
         <div className="TextContainer">
           <h2 className="movieTitle">{movie.title}</h2>
-          <button onClick={() => props.editMovie(movie.id)} className="btn-edit">✏️</button>
-          <button onClick={() => props.deleteMovie(movie.id)}
-            className="btn-danger">🗑️</button>
-          <button className="star">⭐</button>
+          <div className="movieBtn">
+              <button onClick={() => props.editMovie(movie.id)} className="btn-edit">✏️</button>
+              <button onClick={() => props.deleteMovie(movie.id)}
+                className="btn-danger">🗑️</button>
+              <button className="star">⭐</button>
+          </div>
         </div>
       </div>
     );
