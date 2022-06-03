@@ -24,12 +24,12 @@ const movieId = (id) => {
     return(
     <div>
     
-      <NavBar></NavBar>
+      <NavBar/>
       <Link to="/"><Button>atras</Button></Link>
         <section className='pageContainer'>
           <div className='movieInfo'>
               <div className='imageContainer'>
-                  <img src={movie.imgUrl}/>
+                  <img className='img'src={movie.imgUrl}alt={movie.title}/>
               </div> 
                 <div className='textContainer'>
                   <h1>{movie.title}</h1>

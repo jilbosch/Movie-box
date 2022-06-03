@@ -1,0 +1,10 @@
+@import url(./loading.css);
+@import url(./peliSola.css);
+@import url(./form/MovieCard.css);
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+body {
+  background-color: #eeeeee;
+  font-family: "Roboto", sans-serif;
+  margin: 0 auto;
+  max-width: 1200px;
+}
